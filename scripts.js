@@ -9,12 +9,20 @@
  * 4. Render chart
 */
 
-function callback(){
+//defining my google.load callback
+function Pkgloaded(){
+	console.log("Google pkg loaded");
+}
+
+
+function Polo(){
 	console.log("page done");
+	//load Google charting package
+	google.load("visualization", "1", {packages:["corechart"], "callback": Pkgloaded});
 }
 
 /*document ready function */
-$(document).ready(callback)
+$(document).ready(Polo)
 
 console.log("js loaded");
  
