@@ -10,8 +10,26 @@
 */
 
 function infoLoaded(UEMP270V){
+	var Observe = UEMP270V.observations;
+	
 	console.log(UEMP270V);
 	
+	var Containerlist = [];
+	//to create my visualization, I need to convert
+	//my JSON data to an array of arrays, using a for loop
+	
+	//specify starting point, ending point
+	for(var i=0; i<Observe.length; i++){
+		//create reference to current object in list
+		var object = Observe[i];
+		//Create little array with date and value
+		var array = [object.date, Number (object.value)];
+		//Put array into Containerlist
+		Containerlist.push(array);
+	}
+	//at end of for loop, Containerlist should be populated with 
+	//array of arrays that is date and value of observations
+	console.log(Containerlist);
 }
 
 //defining my google.load callback
